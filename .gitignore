@@ -22,3 +22,143 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Eclipse specific files and directories
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.target/
+
+# Eclipse Core
+.project
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific (PHP Development Tools)
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# Annotation Processing
+.apt_generated/
+.apt_generated_test/
+
+# Scala IDE specific (Scala & Java)
+.cache-main
+.scala_dependencies
+.worksheet
+
+# Uncomment this line if you wish to ignore the project description file.
+# Typically, this file would be tracked if it contains build/dependency configurations:
+# .project
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IntelliJ IDEA (caso venha a usar)
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# NetBeans (caso venha a usar)
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# VS Code
+.vscode/
+
+# OS specific files
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Temporary files
+*.temp
+*.tmp
+
+# Java specific
+# Compiled class files
+*.class
+
+# Generated files
+.apt_generated/
+.apt_generated_test/
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# Java annotation processor files
+.factorypath
+
+# Application specific
+# Logs
+logs/
+*.log
+*.log.*
+
+# Database files (se houver)
+*.db
+*.sqlite
+*.sqlite3
+
+# Configuration files that might contain sensitive data
+*.properties.local
+*.properties.dev
+config/local/
+
+# Test reports
+target/surefire-reports/
+target/failsafe-reports/
+
+# Coverage reports
+target/site/jacoco/
