@@ -16,10 +16,16 @@ public class Main {
 				LocalDate.now());
 
 		System.out.println(curso1);
+		System.out.printf("XP curso: %s\n", curso1.calcularXp());
+		System.out.println("---------------------------");
 
 		System.out.println(curso2);
+		System.out.printf("XP curso: %s\n", curso2.calcularXp());
+		System.out.println("---------------------------");
 
 		System.out.println(mentoria);
+		System.out.printf("XP mentoria: %s\n", mentoria.calcularXp());
+		System.out.println("---------------------------");
 	}
 
 }
