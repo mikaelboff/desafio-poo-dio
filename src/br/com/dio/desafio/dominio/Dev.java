@@ -12,6 +12,11 @@ public class Dev {
 
 	private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
+	public Dev(String nome) {
+		super();
+		this.nome = nome;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -55,14 +60,22 @@ public class Dev {
 	}
 
 	public void inscreverBootcamp(Bootcamp bootcamp) {
+		this.conteudosInscritos.addAll(bootcamp.getConteudos());
 
+		bootcamp.getDevsInscritos().add(this);
 	}
 
 	public void progredir() {
+		this.conteudosInscritos.stream().findFirst().ifPresentOrElse(conteudo -> {
+			this.conteudosConcluidos.add(conteudo);
+			this.conteudosInscritos.remove(conteudo);
+		}, () -> {
+			System.err.println("Você não está matriculado em nenhum conteúdo");
+		});
 
 	}
 
-	public void calcularTotalXp() {
-
+	public double calcularTotalXp() {
+		return this.conteudosConcluidos.stream().mapToDouble(Conteudo::calcularXp).sum();
 	}
 }
