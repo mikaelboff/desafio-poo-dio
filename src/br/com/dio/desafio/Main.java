@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import br.com.dio.desafio.dominio.Bootcamp;
+import br.com.dio.desafio.dominio.Conteudo;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Mentoria;
@@ -18,45 +19,63 @@ public class Main {
 		Mentoria mentoria = new Mentoria("mentoria de java", "mentoria para decidir qual caminho seguir",
 				LocalDate.now());
 
-		System.out.println(curso1);
-		System.out.printf("XP curso: %s\n", curso1.calcularXp());
-		System.out.println("---------------------------");
+		imprimirXpConteudo(curso1);
 
-		System.out.println(curso2);
-		System.out.printf("XP curso: %s\n", curso2.calcularXp());
-		System.out.println("---------------------------");
+		imprimirXpConteudo(curso2);
 
-		System.out.println(mentoria);
-		System.out.printf("XP mentoria: %s\n", mentoria.calcularXp());
-		System.out.println("---------------------------");
+		imprimirXpConteudo(mentoria);
 
 		Bootcamp bootcamp = new Bootcamp("bootcamp dio java e javascript", "bootcamp com os cursos java e javascript");
 		bootcamp.getConteudos().addAll(List.of(curso1, curso2, mentoria));
 
 		Dev dev = new Dev("Mikael Boff");
+		imprimirConteudosDev(dev);
+
+		Dev dev2 = new Dev("Maria Silva");
+		imprimirConteudosDev(dev2);
 
 		dev.progredir();
-		System.out.printf("XP DEV: %s\n", dev.calcularTotalXp());
-		System.out.println("---------------------------");
+		imprimirXpDev(dev);
 
 		dev.inscreverBootcamp(bootcamp);
+		dev2.inscreverBootcamp(bootcamp);
+
+		imprimirConteudosDev(dev);
+		imprimirConteudosDev(dev2);
 
 		dev.progredir();
-		System.out.printf("XP DEV: %s\n", dev.calcularTotalXp());
-		System.out.println("---------------------------");
+		imprimirXpDev(dev);
+		imprimirConteudosDev(dev);
 
 		dev.progredir();
-		System.out.printf("XP DEV: %s\n", dev.calcularTotalXp());
-		System.out.println("---------------------------");
+		imprimirXpDev(dev);
+		imprimirConteudosDev(dev);
 
 		dev.progredir();
-		System.out.printf("XP DEV: %s\n", dev.calcularTotalXp());
-		System.out.println("---------------------------");
+		imprimirXpDev(dev);
+		imprimirConteudosDev(dev);
 
 		dev.progredir();
+		imprimirXpDev(dev);
+		imprimirConteudosDev(dev);
+
+	}
+
+	private static void imprimirXpConteudo(Conteudo conteudo) {
+		System.out.println(conteudo);
+		System.out.printf("XP conteúdo: %s\n", conteudo.calcularXp());
+		System.out.println("---------------------------");
+	}
+
+	private static void imprimirConteudosDev(Dev dev) {
+		System.out.printf("Conteúdos inscritos %s: %s\n", dev.getNome(), dev.getConteudosInscritos());
+		System.out.printf("Conteúdos concluídos %s: %s\n", dev.getNome(), dev.getConteudosConcluidos());
+		System.out.println("---------------------------");
+	}
+
+	private static void imprimirXpDev(Dev dev) {
 		System.out.printf("XP DEV: %s\n", dev.calcularTotalXp());
 		System.out.println("---------------------------");
-
 	}
 
 }
